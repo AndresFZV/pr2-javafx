@@ -135,9 +135,22 @@ public class ClienteController {
         String edadText = txtEdad.getText();
         String celular = txtCelular.getText();
         String tipoCliente = getTipoCliente();
+
         if (nombre.isBlank() || apellido.isBlank() || cedula.isBlank() || correo.isBlank() ||
                 edadText.isBlank() || celular.isBlank() || tipoCliente.isEmpty()) {
             showWarningAlert("¡Error!", "Por favor, complete todos los campos antes de agregar un cliente");
+            return;
+        }
+
+        int edad;
+        try {
+            edad = Integer.parseInt(edadText);
+            if (edad <= 0) {
+                showWarningAlert("¡Error!", "Ingrese una edad válida mayor a 0");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            showWarningAlert("¡Error!", "Ingrese un valor numérico válido para la edad");
             return;
         }
 
@@ -146,10 +159,11 @@ public class ClienteController {
         cliente.setApellido(apellido);
         cliente.setCedula(cedula);
         cliente.setCorreo(correo);
-        cliente.setEdad(Integer.parseInt(edadText));
+        cliente.setEdad(edad);
         cliente.setCelular(celular);
         cliente.setTipoCliente(tipoCliente);
         listaClientes.add(cliente);
+
         // Limpia los campos del formulario
         txtNombre.clear();
         txtApellido.clear();
