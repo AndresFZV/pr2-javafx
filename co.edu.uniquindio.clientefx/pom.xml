@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.cliente.clienteapp/co.edu.uniquindio.cliente.clienteapp.ClienteApplication
+                                co.edu.uniquindio.cliente.clienteapp/co.edu.uniquindio.cliente.clienteapp.App.ClienteApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
