@@ -164,15 +164,13 @@ public class ClienteController {
         cliente.setTipoCliente(tipoCliente);
         listaClientes.add(cliente);
 
-        // Limpia los campos del formulario
         txtNombre.clear();
         txtApellido.clear();
         txtCedula.clear();
         txtCorreo.clear();
         txtEdad.clear();
         txtCelular.clear();
-
-        // Rehabilita todos los botones de radio
+        
         activarBotones();
     }
 
