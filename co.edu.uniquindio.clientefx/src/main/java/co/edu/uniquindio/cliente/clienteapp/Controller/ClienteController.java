@@ -102,12 +102,12 @@ public class ClienteController {
     }
 
     private void setupRadioButtonListeners() {
-        btnBasico.selectedProperty().addListener((obs, wasSelected, isSelected) -> handleRadioButtonChange(btnBasico, isSelected));
-        btnPremium.selectedProperty().addListener((obs, wasSelected, isSelected) -> handleRadioButtonChange(btnPremium, isSelected));
-        btnVip.selectedProperty().addListener((obs, wasSelected, isSelected) -> handleRadioButtonChange(btnVip, isSelected));
+        btnBasico.selectedProperty().addListener((obs, wasSelected, isSelected) -> cambiarBotones(btnBasico, isSelected));
+        btnPremium.selectedProperty().addListener((obs, wasSelected, isSelected) -> cambiarBotones(btnPremium, isSelected));
+        btnVip.selectedProperty().addListener((obs, wasSelected, isSelected) -> cambiarBotones(btnVip, isSelected));
     }
 
-    private void handleRadioButtonChange(RadioButton button, Boolean isSelected) {
+    private void cambiarBotones(RadioButton button, Boolean isSelected) {
         if (isSelected) {
             desactivarBotones(button);
         } else {
